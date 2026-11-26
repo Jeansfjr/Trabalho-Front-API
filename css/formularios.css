@@ -1,0 +1,130 @@
+/* Formulários, campos, botões e mensagens */
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-1);
+}
+.campo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input[type='text'],
+input[type='search'],
+input[type='number'],
+select {
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: #fff;
+  color: var(--cor-texto);
+}
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.campo--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--espaco-2);
+}
+.campo--checkbox input {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* Formulário de busca (lista) */
+.filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--espaco-3);
+  align-items: end;
+}
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+}
+
+/* Formulário de cadastro/edição */
+.formulario {
+  display: grid;
+  gap: var(--espaco-3);
+  max-width: 520px;
+}
+.formulario[hidden] {
+  display: none;
+}
+
+/* Botões */
+.botao {
+  display: inline-block;
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 0;
+  border-radius: var(--raio);
+  background: var(--cor-primaria);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+.botao:hover {
+  background: var(--cor-primaria-escura);
+}
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.botao--secundario {
+  background: var(--cor-borda);
+  color: var(--cor-texto);
+}
+.botao--secundario:hover {
+  background: #cfd5dd;
+}
+.botao--destaque {
+  background: var(--cor-destaque);
+  color: var(--cor-primaria-escura);
+}
+.botao--destaque:hover {
+  background: var(--cor-destaque-escura);
+}
+.botao--perigo {
+  background: var(--cor-perigo);
+}
+.botao--perigo:hover {
+  background: #a02f23;
+}
+.botao--pequeno {
+  padding: var(--espaco-1) var(--espaco-2);
+  font-size: 0.85rem;
+}
+
+/* Mensagens de retorno da API */
+.mensagem {
+  padding: var(--espaco-2) var(--espaco-3);
+  border-radius: var(--raio);
+  margin: var(--espaco-3) 0;
+  font-weight: 600;
+}
+.mensagem[hidden] {
+  display: none;
+}
+.mensagem--sucesso {
+  background: var(--cor-sucesso-clara);
+  color: var(--cor-sucesso);
+}
+.mensagem--erro {
+  background: var(--cor-perigo-clara);
+  color: var(--cor-perigo);
+}
+.mensagem--info {
+  background: var(--cor-info-clara);
+  color: var(--cor-primaria);
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de filmes | Meus Filmes</title>
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link rel="stylesheet" href="css/modern-normalize.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/formularios.css">
+  <script type="module" src="js/componentes.js"></script>
+  <script type="module" src="js/listar.js"></script>
+</head>
+<body>
+  <app-header></app-header>
+  <app-nav></app-nav>
+
+  <main class="container">
+    <section class="painel">
+      <h2>Meus filmes <span id="total" class="selo" title="Total de filmes cadastrados">0</span></h2>
+
+      <form id="form-busca" class="filtros">
+        <div class="campo">
+          <label for="busca">Título</label>
+          <input id="busca" name="busca" type="search" placeholder="Ex.: Interestelar">
+        </div>
+        <div class="campo">
+          <label for="genero">Gênero</label>
+          <select id="genero" name="genero"></select>
+        </div>
+        <div class="campo">
+          <label for="status">Situação</label>
+          <select id="status" name="status">
+            <option value="">Todos</option>
+            <option value="sim">Assistidos</option>
+            <option value="nao">Pendentes</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="ordem">Ordenar por</label>
+          <select id="ordem" name="ordem">
+            <option value="titulo.asc">Título (A-Z)</option>
+            <option value="nota.desc.nullslast">Maior nota</option>
+            <option value="ano.desc">Mais recentes</option>
+            <option value="ano.asc">Mais antigos</option>
+            <option value="criado_em.desc">Últimos cadastrados</option>
+          </select>
+        </div>
+        <div class="acoes">
+          <button type="submit" class="botao">Buscar</button>
+          <button type="reset" class="botao botao--secundario">Limpar</button>
+          <button type="button" id="btn-top5" class="botao botao--destaque">Top 5 notas</button>
+        </div>
+      </form>
+
+      <p id="mensagem" class="mensagem" role="status" hidden></p>
+      <p id="resumo" class="resumo"></p>
+
+      <div class="tabela-rolagem">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Gênero</th>
+              <th class="centro">Ano</th>
+              <th class="centro">Nota</th>
+              <th class="centro">Situação</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-filmes"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</body>
+</html>

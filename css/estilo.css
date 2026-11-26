@@ -1,0 +1,200 @@
+/* Layout geral, custom elements (topo, menu, rodapé), painéis e tabela */
+
+body {
+  font-family: var(--fonte-base);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Os custom elements precisam virar blocos para o layout funcionar */
+app-header,
+app-nav,
+app-footer {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 var(--espaco-3);
+}
+
+/* ---------- Topo ---------- */
+.topo {
+  background: var(--cor-primaria-escura);
+  color: #fff;
+  padding: var(--espaco-3) 0;
+}
+.topo__conteudo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+}
+.topo__logo {
+  width: 44px;
+  height: 44px;
+}
+.topo__titulo {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.topo__subtitulo {
+  margin: 0;
+  color: #c9d3e3;
+  font-size: 0.9rem;
+}
+
+/* ---------- Menu ---------- */
+.menu {
+  background: var(--cor-primaria);
+}
+.menu__lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu__link {
+  display: block;
+  padding: var(--espaco-3);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+}
+.menu__link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.menu__link[aria-current='page'] {
+  border-bottom-color: var(--cor-destaque);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Conteúdo ---------- */
+main {
+  flex: 1;
+  padding: var(--espaco-4) 0;
+}
+
+.painel {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: var(--espaco-4);
+  margin-bottom: var(--espaco-4);
+}
+.painel h2 {
+  margin-top: 0;
+  color: var(--cor-primaria);
+}
+
+.selo {
+  display: inline-block;
+  background: var(--cor-destaque);
+  color: var(--cor-primaria-escura);
+  border-radius: 999px;
+  padding: 0 var(--espaco-2);
+  font-size: 0.85rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.resumo {
+  color: var(--cor-texto-suave);
+  margin: var(--espaco-3) 0;
+}
+
+/* ---------- Tabela ---------- */
+.tabela-rolagem {
+  overflow-x: auto;
+}
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+.tabela th {
+  background: var(--cor-primaria);
+  color: #fff;
+  padding: var(--espaco-2) var(--espaco-3);
+  text-align: left;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.tabela td {
+  padding: var(--espaco-2) var(--espaco-3);
+  border-bottom: 1px solid var(--cor-borda);
+}
+.tabela tbody tr:nth-child(even) {
+  background: var(--cor-fundo);
+}
+.tabela tbody tr:hover {
+  background: var(--cor-info-clara);
+}
+.tabela .centro {
+  text-align: center;
+}
+.tabela .acoes-celula {
+  display: flex;
+  gap: var(--espaco-2);
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 0 var(--espaco-2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.etiqueta--sim {
+  background: var(--cor-sucesso-clara);
+  color: var(--cor-sucesso);
+}
+.etiqueta--nao {
+  background: var(--cor-fundo);
+  color: var(--cor-texto-suave);
+}
+
+/* ---------- Detalhes (página de exclusão) ---------- */
+.detalhes {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--espaco-2) var(--espaco-3);
+  margin: var(--espaco-3) 0;
+}
+.detalhes dt {
+  font-weight: 700;
+  color: var(--cor-texto-suave);
+}
+.detalhes dd {
+  margin: 0;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  background: var(--cor-primaria-escura);
+  color: #c9d3e3;
+  padding: var(--espaco-3) 0;
+  font-size: 0.9rem;
+}
+.rodape p {
+  margin: var(--espaco-1) 0;
+}
+
+@media (max-width: 600px) {
+  .topo__titulo {
+    font-size: 1.2rem;
+  }
+  .painel {
+    padding: var(--espaco-3);
+  }
+}

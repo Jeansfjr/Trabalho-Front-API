@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastrar filme | Meus Filmes</title>
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link rel="stylesheet" href="css/modern-normalize.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/formularios.css">
+  <script type="module" src="js/componentes.js"></script>
+  <script type="module" src="js/criar.js"></script>
+</head>
+<body>
+  <app-header></app-header>
+  <app-nav></app-nav>
+
+  <main class="container">
+    <section class="painel">
+      <h2>Cadastrar filme</h2>
+      <p id="mensagem" class="mensagem" role="status" hidden></p>
+
+      <form id="form-filme" class="formulario">
+        <div class="campo">
+          <label for="titulo">Título</label>
+          <input id="titulo" name="titulo" type="text" maxlength="120" required>
+        </div>
+        <div class="campo">
+          <label for="genero">Gênero</label>
+          <select id="genero" name="genero" required></select>
+        </div>
+        <div class="campo">
+          <label for="ano">Ano de lançamento</label>
+          <input id="ano" name="ano" type="number" min="1888" max="2100" required>
+        </div>
+        <div class="campo">
+          <label for="nota">Nota (0 a 10, opcional)</label>
+          <input id="nota" name="nota" type="number" min="0" max="10" step="0.1">
+        </div>
+        <div class="campo campo--checkbox">
+          <input id="assistido" name="assistido" type="checkbox">
+          <label for="assistido">Já assisti</label>
+        </div>
+        <div class="acoes">
+          <button type="submit" id="btn-salvar" class="botao">Salvar filme</button>
+          <a class="botao botao--secundario" href="index.html">Voltar à lista</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</body>
+</html>

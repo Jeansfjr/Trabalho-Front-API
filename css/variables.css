@@ -1,0 +1,33 @@
+/* Variáveis globais: cores, espaçamentos, bordas e sombras */
+:root {
+  /* Cores */
+  --cor-fundo: #f3f4f7;
+  --cor-superficie: #ffffff;
+  --cor-texto: #1c2430;
+  --cor-texto-suave: #5b6675;
+  --cor-borda: #dde1e7;
+  --cor-primaria: #1d3557;
+  --cor-primaria-escura: #14243d;
+  --cor-destaque: #e9a820;
+  --cor-destaque-escura: #c98d0f;
+  --cor-perigo: #c0392b;
+  --cor-perigo-clara: #fdecea;
+  --cor-sucesso: #1e8449;
+  --cor-sucesso-clara: #e8f6ee;
+  --cor-info-clara: #e8f0fb;
+
+  /* Espaçamentos */
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 1rem;
+  --espaco-4: 1.5rem;
+  --espaco-5: 2.5rem;
+
+  /* Forma e sombra */
+  --raio: 10px;
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* Layout */
+  --largura-max: 1000px;
+  --fonte-base: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
