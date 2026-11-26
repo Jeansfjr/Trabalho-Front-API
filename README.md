@@ -49,7 +49,3 @@ API REST do Supabase (sem bibliotecas e sem o SDK do Supabase).
 - As políticas de `sql/filmes.sql` liberam ler, inserir, alterar e apagar para qualquer visitante.
   Por isso, use um projeto/tabela só para este trabalho, sem dados importantes.
 - Nunca coloque a chave `sb_secret_` nem a senha do banco no código.
-
-## Créditos
-
-`css/modern-normalize.css` é o modern-normalize (MIT License, Sindre Sorhus).
